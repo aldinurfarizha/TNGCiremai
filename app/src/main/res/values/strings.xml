@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TNG Ciremai</string>
+    <string-array name="jumlah_peserta">
+        <item>--Pilih--</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="jasa_porter">
+        <item>--Pilih--</item>
+        <item>Ya</item>
+        <item>Tidak</item>
+    </string-array>
+</resources>
