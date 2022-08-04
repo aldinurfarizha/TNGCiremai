@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".booking.Term">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/medium"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:textSize="17sp"
+            android:layout_marginBottom="20dp"
+            android:text="Petunjuk dan peraturan booking pendakian gunung Ciremai">
+
+        </TextView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/term">
+
+        </ImageView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Pastikan Seluruh Rombongan pendaki berusia minimal 17 Tahun"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/medium">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="2. Siapkan Identitas KTP/SIM"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/medium">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Booking paling lambat H-1 Pendakian,Paling Cepat H-30"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/medium">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Siapkan perlengkapan dan logistik pendakian yang mencukupi"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/medium">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Pastikan kondisi seluruh rombongan pendaki dalam kondisi sehat (Membawa surat keterangan bebas Covid 19 bagi warga bagi di luar Kuningan, Majalengka dan Cirebon)"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/medium">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="6. Pastikan Jumlah Rombongan pendaki minimal 2 Orang dan maksimal 8 Orang, Bila rombongan lebih dari 8 orang maka booking di lakukan lebih dari 1 kali"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/medium">
+        </TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7. Rombongan di bawah 4 orang wajib menggunakan porter."
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/medium">
+        </TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8. Mengikuti Cek kesehatan, cek perlengkapan dan safety talk di Base Camp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/medium">
+        </TextView>
+        <CheckBox
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/check"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Saya menyetujui dan telah membaca serta akan mematuhi peraturan yang berlaku.">
+        </CheckBox>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Lanjut"
+            android:id="@+id/btn_lanjut"
+            android:textColor="@color/white"
+            android:layout_margin="20dp">
+        </Button>
+    </LinearLayout>
+</ScrollView>

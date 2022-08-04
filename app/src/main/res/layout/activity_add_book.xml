@@ -27,6 +27,7 @@
             android:layout_marginRight="20dp"
             android:entries="@array/jumlah_peserta"
             android:layout_height="45dp"
+            android:id="@+id/jumlah_peserta"
             android:padding="5dp"
             android:background="@drawable/roundedborder">
         </Spinner>
@@ -45,7 +46,10 @@
             android:layout_marginRight="20dp"
             android:layout_height="45dp"
             android:padding="5dp"
+            android:editable="false"
+            android:focusable="false"
             android:clickable="false"
+            android:id="@+id/tanggal_berangkat"
             android:background="@drawable/roundedborder">
         </EditText>
         <TextView
@@ -66,6 +70,16 @@
             android:padding="5dp"
             android:background="@drawable/roundedborder">
         </Spinner>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/light"
+            android:text="😊 Menggunakan Jasa Porter membantu untuk memajukan perekonomian masyarakat setempat. ">
+
+        </TextView>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"

@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TNGCiremai">
         <activity
+            android:name=".booking.Select_porter"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Done"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Add2"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Term"
+            android:exported="false" />
+        <activity
             android:name=".booking.Add_book"
             android:exported="false" />
         <activity

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.fai.tngciremai.booking.Add_book;
+import com.fai.tngciremai.booking.Term;
 
 public class Dashboard extends AppCompatActivity {
 CardView booking;
@@ -19,7 +20,7 @@ CardView booking;
         booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Add_book.class));
+                startActivity(new Intent(getApplicationContext(), Term.class));
             }
         });
     }

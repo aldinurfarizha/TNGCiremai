@@ -5,10 +5,24 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </string-array>
     <string-array name="jasa_porter">
         <item>--Pilih--</item>
         <item>Ya</item>
         <item>Tidak</item>
+    </string-array>
+    <string-array name="jenis_identitas">
+        <item>--Pilih--</item>
+        <item>KTP</item>
+        <item>SIM</item>
+    </string-array>
+    <string-array name="jenis_kelamin">
+        <item>--Pilih--</item>
+        <item>LAKI-LAKI</item>
+        <item>PEREMPUAN</item>
     </string-array>
 </resources>
