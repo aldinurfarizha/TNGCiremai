@@ -41,6 +41,7 @@
             android:layout_marginRight="20dp"
             android:inputType="textEmailAddress"
             android:layout_height="45dp"
+            android:id="@+id/nama_lengkap"
             android:padding="5dp"
             android:background="@drawable/roundedborder"
             android:hint="Muhammad Rifa'i">
@@ -59,6 +60,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:inputType="textEmailAddress"
+            android:id="@+id/email"
             android:layout_height="45dp"
             android:padding="5dp"
             android:background="@drawable/roundedborder"
@@ -79,6 +81,7 @@
             android:layout_marginRight="20dp"
             android:layout_height="45dp"
             android:inputType="textPassword"
+            android:id="@+id/password"
             android:padding="5dp"
             android:background="@drawable/roundedborder"
             android:hint="*********">
@@ -98,6 +101,7 @@
             android:inputType="textPassword"
             android:layout_marginRight="20dp"
             android:layout_height="45dp"
+            android:id="@+id/confirm_password"
             android:padding="5dp"
             android:background="@drawable/roundedborder"
             android:hint="*********">
@@ -116,6 +120,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_height="45dp"
+            android:id="@+id/nomor_telepon"
             android:padding="5dp"
             android:inputType="phone"
             android:background="@drawable/roundedborder"
