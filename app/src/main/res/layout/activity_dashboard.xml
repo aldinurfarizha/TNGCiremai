@@ -26,27 +26,29 @@
             android:layout_marginTop="20dp"
             android:text="Selamat Datang, ">
         </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/regular"
-            android:layout_toRightOf="@+id/welcome"
-            android:textColor="@color/white"
-            android:id="@+id/nama_lengkap"
-            android:textSize="17sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:text="Muhammad Rifa'i">
-        </TextView>
-        <ImageView
-            android:src="@drawable/logout"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:id="@+id/btn_logout"
-            android:layout_height="wrap_content">
-        </ImageView>
+
+          <TextView
+              android:id="@+id/nama_lengkap"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:layout_marginRight="40dp"
+              android:layout_toRightOf="@+id/welcome"
+              android:fontFamily="@font/regular"
+              android:text="Muhammad Rifa'i"
+              android:textColor="@color/white"
+              android:textSize="17sp"></TextView>
+
+          <ImageView
+              android:id="@+id/btn_logout"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentRight="true"
+              android:layout_marginTop="20dp"
+              android:clickable="true"
+              android:foreground="?attr/selectableItemBackgroundBorderless"
+              android:layout_marginRight="20dp"
+              android:src="@drawable/logout"></ImageView>
       </RelativeLayout>
           <LinearLayout
               android:layout_width="match_parent"

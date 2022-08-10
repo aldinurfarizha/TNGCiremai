@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PorterDetail">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/foto"
+            android:src="@drawable/done"
+            android:scaleType="centerCrop"
+            android:layout_height="450dp">
+        </ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:orientation="vertical"
+            android:layout_marginTop="-100dp"
+            android:background="@drawable/roundedaksen">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Andri Saputra"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/medium"
+                android:textSize="23sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/medium"
+                android:text="232 Kali Booked"
+                android:layout_gravity="center_horizontal">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sertifikat di peroleh"
+                android:fontFamily="@font/medium"
+                android:drawableLeft="@drawable/medal"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

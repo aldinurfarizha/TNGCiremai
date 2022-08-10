@@ -65,7 +65,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pengalaman 1 Tahun"
-                        android:textSize="14sp"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/light">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="532 Kali Booked"
+                        android:id="@+id/frequensi"
+                        android:textSize="10sp"
                         android:fontFamily="@font/light">
                     </TextView>
                     <Button
