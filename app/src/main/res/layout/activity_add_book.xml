@@ -67,6 +67,7 @@
             android:layout_marginRight="20dp"
             android:entries="@array/jasa_porter"
             android:layout_height="45dp"
+            android:id="@+id/jasa_porter"
             android:padding="5dp"
             android:background="@drawable/roundedborder">
         </Spinner>
@@ -85,14 +86,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
         <Button
+            android:id="@+id/btn_lanjut"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="Lanjut"
-            android:textColor="@color/white"
-            android:id="@+id/btn_lanjut">
-        </Button>
+            android:textColor="@color/white"></Button>
     </RelativeLayout>
 </LinearLayout>
