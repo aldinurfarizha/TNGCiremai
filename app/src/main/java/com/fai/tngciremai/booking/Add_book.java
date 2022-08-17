@@ -47,6 +47,7 @@ private SimpleDateFormat dateFormatter;
                 }
                 if(jasa_porter.getSelectedItem().toString().equals("--Pilih--")){
                     Toast.makeText(Add_book.this, "Jasa Porter Belum di pilih", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 total_peserta=Integer.parseInt(jumlah_peserta.getSelectedItem().toString());
                 if(total_peserta < 4 && jasa_porter.getSelectedItem().toString().equals("Tidak")){
@@ -67,14 +68,29 @@ private SimpleDateFormat dateFormatter;
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                if(datesekar.equals(tanggal_keberangkatan.getText().toString())){
+                    Toast.makeText(Add_book.this, "Minimal booking H-1", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if(datekeberangkatan.before(datesekarang)){
                     Toast.makeText(Add_book.this, "Tidak bisa memilih tanggal di masa lampau", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
+
+                date.setTime(date.getTime() + 30L * 24 * 60 * 60 * 1000);
+                String date30 = new SimpleDateFormat("yyyy-MM-dd").format(date);
+                Date dateafter30= null;
+                try {
+                    dateafter30 = new SimpleDateFormat("yyyy-MM-dd").parse(date30);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                if(datekeberangkatan.after(dateafter30)){
+                    Toast.makeText(Add_book.this, "Maximal booking H-30", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Toast.makeText(Add_book.this, "mangkat", Toast.LENGTH_SHORT).show();
-
-
             }
         });
         dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
