@@ -3,7 +3,10 @@ package com.fai.tngciremai.booking;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -11,7 +14,19 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.fai.tngciremai.Config.ServerUrl;
+import com.fai.tngciremai.Dashboard;
+import com.fai.tngciremai.Login;
+import com.fai.tngciremai.Model.Credential;
 import com.fai.tngciremai.R;
+import com.fai.tngciremai.Util.SharedPrefManager;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -23,8 +38,10 @@ Spinner jumlah_peserta, jasa_porter;
 EditText tanggal_keberangkatan;
 Button lanjut;
 Integer total_peserta;
+ProgressDialog dialog;
 private DatePickerDialog datePickerDialog;
 private SimpleDateFormat dateFormatter;
+Credential credential;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +50,11 @@ private SimpleDateFormat dateFormatter;
         tanggal_keberangkatan = (EditText) findViewById(R.id.tanggal_berangkat);
         jasa_porter=(Spinner)findViewById(R.id.jasa_porter);
         lanjut=(Button)findViewById(R.id.btn_lanjut);
+        dialog=new ProgressDialog(Add_book.this);
+        dialog.setMessage("Loading");
+        dialog.setCancelable(false);
+        credential = SharedPrefManager.getInstance(this).get();
+        AndroidNetworking.initialize(getApplicationContext());
         lanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,7 +112,36 @@ private SimpleDateFormat dateFormatter;
                     Toast.makeText(Add_book.this, "Maximal booking H-30", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(Add_book.this, "mangkat", Toast.LENGTH_SHORT).show();
+                dialog.show();
+                AndroidNetworking.post(ServerUrl.ADD_KEBERANGKATAN)
+                        .addBodyParameter("tanggal_berangkat", tanggal_keberangkatan.getText().toString())
+                        .addBodyParameter("iduser", credential.getIduser())
+                        .setTag("Login Prosses")
+                        .setPriority(Priority.IMMEDIATE)
+                        .build()
+                        .getAsJSONObject(new JSONObjectRequestListener() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                dialog.dismiss();
+                                try {
+                                    if(response.getBoolean("status")){
+                                        Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_LONG).show();
+                                        finish();
+                                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                                    }else{
+                                        Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_LONG).show();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            @Override
+                            public void onError(ANError error) {
+                                dialog.dismiss();
+                                Toast.makeText(getApplicationContext(), "Koneksi bermasalah", Toast.LENGTH_LONG).show();
+                                Log.e("error:", error.toString());
+                            }
+                        });
             }
         });
         dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);

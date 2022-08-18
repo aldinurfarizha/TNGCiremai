@@ -58,6 +58,7 @@
                         android:layout_height="wrap_content"
                         android:text="Tatang Kolentrang"
                         android:textSize="18sp"
+                        android:id="@+id/nama"
                         android:fontFamily="@font/medium"
                         android:textColor="@color/black">
                     </TextView>
@@ -66,6 +67,7 @@
                         android:layout_height="wrap_content"
                         android:text="Pengalaman 1 Tahun"
                         android:textSize="10sp"
+                        android:id="@+id/tahun_penglaman"
                         android:fontFamily="@font/light">
                     </TextView>
                     <TextView
