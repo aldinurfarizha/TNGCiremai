@@ -19,15 +19,20 @@
         <entry key="app/src/main/res/drawable/roundedbg.xml" value="0.2245" />
         <entry key="app/src/main/res/drawable/roundedborder.xml" value="0.2245" />
         <entry key="app/src/main/res/drawable/roundedborderblack.xml" value="0.2245" />
+        <entry key="app/src/main/res/layout/activity_add2.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_add_book.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/activity_cek_status_porter.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.4100296020507813" />
+        <entry key="app/src/main/res/layout/activity_done.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4127105712890625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_porter_detail.xml" value="0.23289184570312502" />
         <entry key="app/src/main/res/layout/activity_porter_list.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/activity_select_porter.xml" value="0.2109375" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.4" />
         <entry key="app/src/main/res/layout/item_porter.xml" value="0.4792236328124999" />
+        <entry key="app/src/main/res/layout/item_porter_pilih.xml" value="0.4" />
         <entry key="app/src/main/res/layout/item_sertifikat_porter.xml" value="0.4" />
       </map>
     </option>

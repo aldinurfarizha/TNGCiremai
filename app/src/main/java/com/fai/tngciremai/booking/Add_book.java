@@ -22,6 +22,7 @@ import com.fai.tngciremai.Config.ServerUrl;
 import com.fai.tngciremai.Dashboard;
 import com.fai.tngciremai.Login;
 import com.fai.tngciremai.Model.Credential;
+import com.fai.tngciremai.PorterDetail;
 import com.fai.tngciremai.R;
 import com.fai.tngciremai.Util.SharedPrefManager;
 
@@ -113,7 +114,7 @@ Credential credential;
                     return;
                 }
                 dialog.show();
-                AndroidNetworking.post(ServerUrl.ADD_KEBERANGKATAN)
+                AndroidNetworking.post(ServerUrl.CEK_TANGGAL_KEBERANGKATAN)
                         .addBodyParameter("tanggal_berangkat", tanggal_keberangkatan.getText().toString())
                         .addBodyParameter("iduser", credential.getIduser())
                         .setTag("Login Prosses")
@@ -127,7 +128,36 @@ Credential credential;
                                     if(response.getBoolean("status")){
                                         Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_LONG).show();
                                         finish();
-                                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                                        if(jasa_porter.getSelectedItem().toString().equals("Tidak")){
+                                            switch(jumlah_peserta.getSelectedItem().toString()) {
+                                                case "2":
+                                                    Intent intent = new Intent(getApplicationContext(), Add2.class);
+                                                    intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
+                                                    final String id_porter = "null";
+                                                    final String tgl_berangkat= tanggal_keberangkatan.getText().toString();
+                                                    final String peserta = jumlah_peserta.getSelectedItem().toString();
+                                                    intent.putExtra("id_porter", id_porter);
+                                                    intent.putExtra("tanggal_berangkat", tgl_berangkat);
+                                                    intent.putExtra("jumlah_peserta", peserta);
+                                                    startActivity(intent);
+                                                    break;
+                                                case "3":
+                                                    // code block
+                                                    break;
+                                            }
+                                        }else{
+                                            //lari ke pilih porter
+                                            Intent intent = new Intent(getApplicationContext(), Select_porter.class);
+                                            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
+                                            final String id_porter = "null";
+                                            final String tgl_berangkat= tanggal_keberangkatan.getText().toString();
+                                            final String peserta = jumlah_peserta.getSelectedItem().toString();
+                                            intent.putExtra("id_porter", id_porter);
+                                            intent.putExtra("tanggal_berangkat", tgl_berangkat);
+                                            intent.putExtra("jumlah_peserta", peserta);
+                                            startActivity(intent);
+                                        }
+
                                     }else{
                                         Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_LONG).show();
                                     }

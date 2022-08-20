@@ -15,8 +15,11 @@ public class ServerUrl {
   public static final String LOGIN= ROOT_URL + "login";
   public static final String REGISTER= ROOT_URL + "register";
   public static final String ADD_KEBERANGKATAN= ROOT_URL + "add_keberangkatan";
+  public static final String CEK_TANGGAL_KEBERANGKATAN= ROOT_URL + "cek_tanggal";
   public static final String LIST_PORTER=ROOT_URL + "list_porter";
   public static final String SERTIFIKAT_PORTER=ROOT_URL + "sertifikat_porter";
+  public static final String CEK_PORTER=ROOT_URL + "cek_ketersediaan_porter";
+
 
 
 }
