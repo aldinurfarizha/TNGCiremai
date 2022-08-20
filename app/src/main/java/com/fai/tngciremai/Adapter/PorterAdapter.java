@@ -7,13 +7,17 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fai.tngciremai.Config.ServerUrl;
 import com.fai.tngciremai.Model.PorterModel;
+import com.fai.tngciremai.PorterDetail;
 import com.fai.tngciremai.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -38,20 +42,28 @@ public class PorterAdapter extends RecyclerView.Adapter<PorterAdapter.ItemViewHo
     @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(ItemViewHolder holder, final int position) {
-        final Context context = holder.card.getContext();
+        final Context context = holder.imageView.getContext();
+        Picasso.get()
+                .load(ServerUrl.IMG_URL+dataList.get(position).getFoto())
+                .into(holder.imageView);
     holder.nama_lengkap.setText(dataList.get(position).getNama_lengkap());
-    holder.tahun_pengalaman.setText(dataList.get(position).getTahun_pengalaman());
-    holder.frequensi.setText(dataList.get(position).getFrequensi());
+    holder.tahun_pengalaman.setText("Pengalaman "+dataList.get(position).getTahun_pengalaman()+" Tahun");
+    holder.frequensi.setText(dataList.get(position).getFrequensi()+" Kali Booked");
     holder.card.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(context.getApplicationContext(), PorterAdapter.class);
+            Intent intent = new Intent(context.getApplicationContext(), PorterDetail.class);
             intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
             final String id = dataList.get(position).getId_porter();
             final String nama_lengkap= dataList.get(position).getNama_lengkap();
+            final String foto=ServerUrl.IMG_URL+dataList.get(position).getFoto();
+            final String frequensi= dataList.get(position).getFrequensi();
+            final String tahun_pengalaman = dataList.get(position).getTahun_pengalaman();
             intent.putExtra("id",id);
             intent.putExtra("nama_lengkap",nama_lengkap);
-            intent.putExtra("foto", )
+            intent.putExtra("foto", foto);
+            intent.putExtra("frequensi", frequensi);
+            intent.putExtra("tahun_pengalaman", tahun_pengalaman);
             context.startActivity(intent);
         }
     });
@@ -65,12 +77,14 @@ public class PorterAdapter extends RecyclerView.Adapter<PorterAdapter.ItemViewHo
     public class ItemViewHolder extends RecyclerView.ViewHolder{
         private TextView nama_lengkap, tahun_pengalaman, frequensi;
         private CardView card;
+        private ImageView imageView;
         public ItemViewHolder(View itemView) {
             super(itemView);
             card = (CardView)itemView.findViewById(R.id.card);
-            nama_lengkap=(TextView) itemView.findViewById(R.id.nama_lengkap);
+            nama_lengkap=(TextView) itemView.findViewById(R.id.nama);
             tahun_pengalaman =(TextView) itemView.findViewById(R.id.tahun_penglaman);
             frequensi=(TextView) itemView.findViewById(R.id.frequensi);
+            imageView=(ImageView) itemView.findViewById(R.id.image_view);
         }
     }
 }

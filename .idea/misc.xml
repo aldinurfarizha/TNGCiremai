@@ -12,11 +12,10 @@
         <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/activity_done.xml" value="0.22" />
         <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/activity_porter_detail.xml" value="0.22" />
-        <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/activity_porter_list.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/activity_select_porter.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/activity_term.xml" value="0.25" />
-        <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/item_porter.xml" value="0.5" />
+        <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/TNGCiremai/app/src/main/res/layout/item_porter.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/roundedbg.xml" value="0.2245" />
         <entry key="app/src/main/res/drawable/roundedborder.xml" value="0.2245" />
         <entry key="app/src/main/res/drawable/roundedborderblack.xml" value="0.2245" />
@@ -24,12 +23,16 @@
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.4100296020507813" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4127105712890625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/activity_porter_detail.xml" value="0.23289184570312502" />
+        <entry key="app/src/main/res/layout/activity_porter_list.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/item_porter.xml" value="0.4792236328124999" />
+        <entry key="app/src/main/res/layout/item_sertifikat_porter.xml" value="0.4" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

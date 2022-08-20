@@ -12,7 +12,7 @@
         android:orientation="vertical">
         <ImageView
             android:layout_width="match_parent"
-            android:id="@+id/foto"
+            android:id="@+id/image_view"
             android:src="@drawable/done"
             android:scaleType="centerCrop"
             android:layout_height="450dp">
@@ -29,6 +29,7 @@
                 android:text="Andri Saputra"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/medium"
+                android:id="@+id/nama"
                 android:textSize="23sp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black">
@@ -37,7 +38,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/medium"
+                android:id="@+id/frequensi"
                 android:text="232 Kali Booked"
+                android:layout_gravity="center_horizontal">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/medium"
+                android:id="@+id/tahun_penglaman"
+                android:text="1 Tahun Pengalaman"
                 android:layout_gravity="center_horizontal">
             </TextView>
             <TextView
@@ -50,6 +60,21 @@
                 android:textSize="20sp"
                 android:layout_marginLeft="10dp">
             </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/medium"
+                android:id="@+id/no_sertifikat"
+                android:visibility="gone"
+                android:layout_marginTop="50dp"
+                android:text="--Porter ini belum pernah mendapat sertifikat--"
+                android:layout_gravity="center_horizontal">
+            </TextView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycleview">
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
