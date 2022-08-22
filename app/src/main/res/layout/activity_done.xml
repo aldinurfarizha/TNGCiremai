@@ -24,26 +24,26 @@
         android:id="@+id/ilustration"
         android:src="@drawable/done">
     </ImageView>
+
     <TextView
+        android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ilustration"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/medium"
         android:layout_marginTop="20dp"
-        android:id="@+id/subtitle"
-        android:text="KODE BOOKING ANDA:">
-    </TextView>
+        android:fontFamily="@font/medium"
+        android:text="KODE KEBERANGKATAN ANDA:"></TextView>
+
     <TextView
+        android:id="@+id/kode_boking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="KFSW3245"
         android:layout_below="@id/subtitle"
         android:layout_centerHorizontal="true"
-        android:id="@+id/kode_boking"
+        android:text="KFSW3245"
         android:textColor="@color/black"
-        android:textSize="18sp">
-    </TextView>
+        android:textSize="18sp"></TextView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/medium"
-        android:text="Anda Bisa melihat rincian Booking anda pada menu Riwayat"></TextView>
+        android:text="Anda Bisa melihat rincian Keberangkatan anda pada menu Riwayat"></TextView>
 
     <Button
         android:id="@+id/btn_oke"

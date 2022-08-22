@@ -321,12 +321,12 @@
         android:layout_weight="0.75"
         android:layout_margin="20dp"
         android:layout_height="0dp">
+
         <Button
+            android:id="@+id/btn_selesai"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:id="@+id/btn_selesai"
-            android:textColor="@color/white"
-            android:text="Selesai">
-        </Button>
+            android:text="Selesai"
+            android:textColor="@color/white"></Button>
     </RelativeLayout>
 </LinearLayout>
