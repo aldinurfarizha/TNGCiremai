@@ -24,6 +24,17 @@
             android:weightSum="10"
             android:layout_margin="10dp"
             android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KMZWAY87AA"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/medium"
+                android:textSize="17sp"
+                android:id="@+id/kode_keberangkatan"
+                android:textColor="@color/black">
+
+            </TextView>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,11 +44,10 @@
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="wrap_content"
-                    android:text="2022-01-01"
+                    android:text="Tgl Berangkat"
                     android:drawableLeft="@drawable/dot"
                     android:drawablePadding="10dp"
                     android:textSize="15sp"
-                    android:id="@+id/tanggal_berangkat"
                     android:fontFamily="@font/regular">
                 </TextView>
                 <TextView
@@ -45,11 +55,11 @@
                     android:layout_weight="5"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:text="7 Peserta"
+                    android:text="2022-08-10"
                     android:gravity="right"
                     android:drawablePadding="10dp"
                     android:textSize="15sp"
-                    android:id="@+id/jumlah_peserta"
+                    android:id="@+id/tanggal_berangkat"
                     android:fontFamily="@font/regular">
                 </TextView>
             </LinearLayout>

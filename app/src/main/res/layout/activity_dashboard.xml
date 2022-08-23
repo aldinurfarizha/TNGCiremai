@@ -90,7 +90,7 @@
               </androidx.cardview.widget.CardView>
               <androidx.cardview.widget.CardView
                   android:layout_width="0dp"
-                  android:id="@+id/btn_list"
+                  android:id="@+id/btn_riwayat"
                   android:layout_weight="5"
                   android:clickable="true"
                   android:foreground="?attr/selectableItemBackgroundBorderless"

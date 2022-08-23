@@ -1,15 +1,16 @@
 package com.fai.tngciremai.Model;
 
 public class RiwayatBookingModel {
-    String id_keberangkatan, tanggal_berangkat, nama_porter, total_biaya, status,jumlah_peserta;
+    String id_keberangkatan, tanggal_berangkat, nama_porter, total_biaya, status, biaya_tiket, biaya_porter;
 
-    public RiwayatBookingModel(String id_keberangkatan, String tanggal_berangkat, String nama_porter, String total_biaya, String status, String jumlah_peserta) {
+    public RiwayatBookingModel(String id_keberangkatan, String tanggal_berangkat, String nama_porter, String total_biaya, String status, String biaya_tiket, String biaya_porter) {
         this.id_keberangkatan = id_keberangkatan;
         this.tanggal_berangkat = tanggal_berangkat;
         this.nama_porter = nama_porter;
         this.total_biaya = total_biaya;
         this.status = status;
-        this.jumlah_peserta = jumlah_peserta;
+        this.biaya_tiket = biaya_tiket;
+        this.biaya_porter = biaya_porter;
     }
 
     public String getId_keberangkatan() {
@@ -52,11 +53,19 @@ public class RiwayatBookingModel {
         this.status = status;
     }
 
-    public String getJumlah_peserta() {
-        return jumlah_peserta;
+    public String getBiaya_tiket() {
+        return biaya_tiket;
     }
 
-    public void setJumlah_peserta(String jumlah_peserta) {
-        this.jumlah_peserta = jumlah_peserta;
+    public void setBiaya_tiket(String biaya_tiket) {
+        this.biaya_tiket = biaya_tiket;
+    }
+
+    public String getBiaya_porter() {
+        return biaya_porter;
+    }
+
+    public void setBiaya_porter(String biaya_porter) {
+        this.biaya_porter = biaya_porter;
     }
 }
