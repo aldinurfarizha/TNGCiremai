@@ -174,6 +174,16 @@
                         android:fontFamily="@font/medium">
                     </TextView>
                 </LinearLayout>
+                <Button
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:visibility="gone"
+                    android:id="@+id/btn_batal"
+                    android:backgroundTint="@color/secondary"
+                    android:text="Batal"
+                    android:textColor="@color/white">
+                </Button>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <TextView
@@ -187,7 +197,7 @@
         </TextView>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="750dp"
             android:id="@+id/recycleview">
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
