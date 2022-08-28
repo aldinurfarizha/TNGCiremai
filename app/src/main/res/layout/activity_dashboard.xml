@@ -159,7 +159,7 @@
               </androidx.cardview.widget.CardView>
               <androidx.cardview.widget.CardView
                   android:layout_width="0dp"
-                  android:id="@+id/btn_info"
+                  android:id="@+id/btn_tentang"
                   android:layout_weight="5"
                   android:layout_margin="5dp"
                   android:clickable="true"

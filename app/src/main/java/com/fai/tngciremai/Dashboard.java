@@ -17,7 +17,7 @@ import com.fai.tngciremai.booking.Term;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class Dashboard extends AppCompatActivity {
-CardView booking, porter,riwayat;
+CardView booking, porter,riwayat, tentang;
 TextView nama_lengkap;
 Credential credential;
 ImageView btn_logout;
@@ -30,6 +30,7 @@ ImageView btn_logout;
         btn_logout=(ImageView)findViewById(R.id.btn_logout);
         porter=(CardView)findViewById(R.id.btn_porter);
         riwayat=(CardView)findViewById(R.id.btn_riwayat);
+        tentang=(CardView)findViewById(R.id.btn_tentang);
         credential = SharedPrefManager.getInstance(this).get();
         nama_lengkap.setText(credential.getNama_lengkap());
         riwayat.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +65,12 @@ ImageView btn_logout;
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Term.class));
+            }
+        });
+        tentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), About.class));
             }
         });
     }
