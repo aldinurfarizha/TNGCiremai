@@ -14,6 +14,27 @@
         android:theme="@style/Theme.TNGCiremai"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Add8"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Add7"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Add6"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Add5"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Add4"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Add3"
+            android:exported="false" />
+        <activity
             android:name=".DetailRiwayat"
             android:exported="false" />
         <activity

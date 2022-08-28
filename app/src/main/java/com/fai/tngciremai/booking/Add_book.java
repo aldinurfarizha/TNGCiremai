@@ -128,31 +128,77 @@ Credential credential;
                                     if(response.getBoolean("status")){
                                         Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_LONG).show();
                                         finish();
+
+                                        final String id_porter = "null";
+                                        final String tanggal_berangkat= tanggal_keberangkatan.getText().toString();
+                                        final String jumlah_pesertas = jumlah_peserta.getSelectedItem().toString();
                                         if(jasa_porter.getSelectedItem().toString().equals("Tidak")){
                                             switch(jumlah_peserta.getSelectedItem().toString()) {
                                                 case "2":
                                                     Intent intent = new Intent(getApplicationContext(), Add2.class);
                                                     intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
-                                                    final String id_porter = "null";
-                                                    final String tgl_berangkat= tanggal_keberangkatan.getText().toString();
-                                                    final String peserta = jumlah_peserta.getSelectedItem().toString();
                                                     intent.putExtra("id_porter", id_porter);
-                                                    intent.putExtra("tanggal_berangkat", tgl_berangkat);
-                                                    intent.putExtra("jumlah_peserta", peserta);
+                                                    intent.putExtra("tanggal_berangkat", tanggal_berangkat);
+                                                    intent.putExtra("jumlah_peserta", jumlah_pesertas);
                                                     startActivity(intent);
                                                     break;
                                                 case "3":
-                                                    // code block
+                                                    Intent intent3 = new Intent(getApplicationContext(), Add3.class);
+                                                    intent3.setFlags(intent3.FLAG_ACTIVITY_NEW_TASK);
+                                                    intent3.putExtra("id_porter", id_porter);
+                                                    intent3.putExtra("tanggal_berangkat", tanggal_berangkat);
+                                                    intent3.putExtra("jumlah_peserta", jumlah_pesertas);
+                                                    startActivity(intent3);
+                                                    break;
+                                                case "4":
+                                                    Intent intent4 = new Intent(getApplicationContext(), Add4.class);
+                                                    intent4.setFlags(intent4.FLAG_ACTIVITY_NEW_TASK);
+                                                    intent4.putExtra("id_porter", id_porter);
+                                                    intent4.putExtra("tanggal_berangkat", tanggal_berangkat);
+                                                    intent4.putExtra("jumlah_peserta", jumlah_pesertas);
+                                                    startActivity(intent4);
+                                                    break;
+                                                case "5":
+                                                    Intent intent5 = new Intent(getApplicationContext(), Add5.class);
+                                                    intent5.setFlags(intent5.FLAG_ACTIVITY_NEW_TASK);
+                                                    intent5.putExtra("id_porter", id_porter);
+                                                    intent5.putExtra("tanggal_berangkat", tanggal_berangkat);
+                                                    intent5.putExtra("jumlah_peserta", jumlah_pesertas);
+                                                    startActivity(intent5);
+                                                    break;
+                                                case "6":
+                                                    Intent intent6 = new Intent(getApplicationContext(), Add6.class);
+                                                    intent6.setFlags(intent6.FLAG_ACTIVITY_NEW_TASK);
+                                                    intent6.putExtra("id_porter", id_porter);
+                                                    intent6.putExtra("tanggal_berangkat", tanggal_berangkat);
+                                                    intent6.putExtra("jumlah_peserta", jumlah_pesertas);
+                                                    startActivity(intent6);
+                                                    break;
+                                                case "7":
+                                                    Intent intent7 = new Intent(getApplicationContext(), Add7.class);
+                                                    intent7.setFlags(intent7.FLAG_ACTIVITY_NEW_TASK);
+                                                    intent7.putExtra("id_porter", id_porter);
+                                                    intent7.putExtra("tanggal_berangkat", tanggal_berangkat);
+                                                    intent7.putExtra("jumlah_peserta", jumlah_pesertas);
+                                                    startActivity(intent7);
+                                                    break;
+                                                case "8":
+                                                    Intent intent8 = new Intent(getApplicationContext(), Add8.class);
+                                                    intent8.setFlags(intent8.FLAG_ACTIVITY_NEW_TASK);
+                                                    intent8.putExtra("id_porter", id_porter);
+                                                    intent8.putExtra("tanggal_berangkat", tanggal_berangkat);
+                                                    intent8.putExtra("jumlah_peserta", jumlah_pesertas);
+                                                    startActivity(intent8);
                                                     break;
                                             }
                                         }else{
                                             //lari ke pilih porter
                                             Intent intent = new Intent(getApplicationContext(), Select_porter.class);
                                             intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
-                                            final String id_porter = "null";
+                                            final String id_porters = "null";
                                             final String tgl_berangkat= tanggal_keberangkatan.getText().toString();
                                             final String peserta = jumlah_peserta.getSelectedItem().toString();
-                                            intent.putExtra("id_porter", id_porter);
+                                            intent.putExtra("id_porter", id_porters);
                                             intent.putExtra("tanggal_berangkat", tgl_berangkat);
                                             intent.putExtra("jumlah_peserta", peserta);
                                             startActivity(intent);
