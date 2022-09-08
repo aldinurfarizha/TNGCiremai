@@ -79,6 +79,7 @@
                         android:layout_width="match_parent"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
+                        android:inputType="number"
                         android:layout_height="45dp"
                         android:padding="5dp"
                         android:id="@+id/nomor_identitas1"
@@ -100,6 +101,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
                         android:padding="5dp"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
                         android:id="@+id/nama_lengkap1"
                         android:background="@drawable/roundedborder"
                         android:hint="M.Rifai">
@@ -138,6 +140,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
                         android:padding="5dp"
+                        android:inputType="number"
                         android:id="@+id/nomor_telepon1"
                         android:background="@drawable/roundedborder"
                         android:hint="08123456...">
@@ -224,6 +227,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
+                        android:inputType="number"
                         android:padding="5dp"
                         android:id="@+id/nomor_identitas2"
                         android:background="@drawable/roundedborder"
@@ -244,6 +248,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
                         android:padding="5dp"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
                         android:id="@+id/nama_lengkap2"
                         android:background="@drawable/roundedborder"
                         android:hint="M.Rifai">
@@ -281,6 +286,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
+                        android:inputType="number"
                         android:padding="5dp"
                         android:id="@+id/nomor_telepon2"
                         android:background="@drawable/roundedborder"

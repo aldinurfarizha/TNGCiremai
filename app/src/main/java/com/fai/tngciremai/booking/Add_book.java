@@ -1,17 +1,23 @@
 package com.fai.tngciremai.booking;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
@@ -30,12 +36,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.text.ParseException;
 public class Add_book extends AppCompatActivity {
-Spinner jumlah_peserta, jasa_porter;
+Spinner jumlah_peserta, jasa_porter, jalur;
 EditText tanggal_keberangkatan;
 Button lanjut;
 Integer total_peserta;
@@ -54,6 +63,48 @@ Credential credential;
         dialog=new ProgressDialog(Add_book.this);
         dialog.setMessage("Loading");
         dialog.setCancelable(false);
+        jalur = (Spinner) findViewById(R.id.jalur);
+        String[] plants = new String[]{
+                "Palutungan",
+                "Apuy",
+                "Linggarjati",
+                "Linggasana"
+        };
+
+        final List<String> plantsList = new ArrayList<>(Arrays.asList(plants));
+
+        // Initializing an ArrayAdapter
+        final ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
+                this,R.layout.spinner_item,plantsList){
+            @Override
+            public boolean isEnabled(int position){
+                if(position == 0)
+                {
+                    // Disable the second item from Spinner
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            @Override
+            public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView tv = (TextView) view;
+                if(position==0) {
+                    tv.setTextColor(Color.BLACK);
+                }
+                else {
+                    tv.setTextColor(Color.GRAY);
+                }
+                return view;
+            }
+        };
+
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        jalur.setAdapter(spinnerArrayAdapter);
         credential = SharedPrefManager.getInstance(this).get();
         AndroidNetworking.initialize(getApplicationContext());
         lanjut.setOnClickListener(new View.OnClickListener() {

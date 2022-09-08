@@ -25,7 +25,7 @@ public class PorterAdapter extends RecyclerView.Adapter<PorterAdapter.ItemViewHo
 
     private ArrayList<PorterModel> dataList;
     Context context;
-
+    Integer nomor=1;
     public PorterAdapter(ArrayList<PorterModel> dataList) {
         this.context = context;
         this.dataList = dataList;
@@ -49,6 +49,7 @@ public class PorterAdapter extends RecyclerView.Adapter<PorterAdapter.ItemViewHo
     holder.nama_lengkap.setText(dataList.get(position).getNama_lengkap());
     holder.tahun_pengalaman.setText("Pengalaman "+dataList.get(position).getTahun_pengalaman()+" Tahun");
     holder.frequensi.setText(dataList.get(position).getFrequensi()+" Kali Booked");
+    holder.nomor.setText(""+nomor);
     holder.card.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -67,6 +68,7 @@ public class PorterAdapter extends RecyclerView.Adapter<PorterAdapter.ItemViewHo
             context.startActivity(intent);
         }
     });
+    nomor++;
     }
 
     @Override
@@ -75,7 +77,7 @@ public class PorterAdapter extends RecyclerView.Adapter<PorterAdapter.ItemViewHo
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
-        private TextView nama_lengkap, tahun_pengalaman, frequensi;
+        private TextView nama_lengkap, tahun_pengalaman, frequensi, nomor;
         private CardView card;
         private ImageView imageView;
         public ItemViewHolder(View itemView) {
@@ -85,6 +87,7 @@ public class PorterAdapter extends RecyclerView.Adapter<PorterAdapter.ItemViewHo
             tahun_pengalaman =(TextView) itemView.findViewById(R.id.tahun_penglaman);
             frequensi=(TextView) itemView.findViewById(R.id.frequensi);
             imageView=(ImageView) itemView.findViewById(R.id.image_view);
+            nomor=(TextView) itemView.findViewById(R.id.nomor);
         }
     }
 }
