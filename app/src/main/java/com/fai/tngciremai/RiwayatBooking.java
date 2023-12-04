@@ -63,7 +63,7 @@ public class RiwayatBooking extends AppCompatActivity {
                             JSONArray array = jsonObject.getJSONArray("data");
                             for (int i=0; i<array.length(); i++){
                                 JSONObject ob=array.getJSONObject(i);
-                                RiwayatBookingModel riwayatBookingModel=new RiwayatBookingModel(ob.getString("kode_keberangkatan"),ob.getString("tanggal_berangkat"), ob.getString("nama_lengkap"), ob.getString("jumlah_pembayaran"), ob.getString("status"), ob.getString("biaya_tiket"),ob.getString("biaya_porter") );
+                                RiwayatBookingModel riwayatBookingModel=new RiwayatBookingModel(ob.getString("kode_keberangkatan"),ob.getString("tanggal_berangkat"), ob.getString("nama_lengkap"), ob.getString("jumlah_pembayaran"), ob.getString("status_keberangkatan"), ob.getString("biaya_tiket"),ob.getString("biaya_porter"), ob.getString("status_pembayaran") );
                                 riwayatBookingModels.add(riwayatBookingModel);
                             }
                             bookingAdapter = new BookingAdapter(riwayatBookingModels);

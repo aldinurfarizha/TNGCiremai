@@ -4,7 +4,7 @@ public class ServerUrl {
 
 
   //Root URL
-  private static final String SERVER_ADDRESS="http://14.3.22.106/";
+  private static final String SERVER_ADDRESS="http://192.168.0.6/";
   private static final String SERVER_NAME="tngciremai_web/";
   private static final String SERVER_PATH_API="api/";
   private static final String SERVER_PATH_IMAGE="private/file_upload/";

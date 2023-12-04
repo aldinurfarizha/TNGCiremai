@@ -1,9 +1,9 @@
 package com.fai.tngciremai.Model;
 
 public class RiwayatBookingModel {
-    String id_keberangkatan, tanggal_berangkat, nama_porter, total_biaya, status, biaya_tiket, biaya_porter;
+    String id_keberangkatan, tanggal_berangkat, nama_porter, total_biaya, status, biaya_tiket, biaya_porter, status_pembayaran;
 
-    public RiwayatBookingModel(String id_keberangkatan, String tanggal_berangkat, String nama_porter, String total_biaya, String status, String biaya_tiket, String biaya_porter) {
+    public RiwayatBookingModel(String id_keberangkatan, String tanggal_berangkat, String nama_porter, String total_biaya, String status, String biaya_tiket, String biaya_porter, String status_pembayaran) {
         this.id_keberangkatan = id_keberangkatan;
         this.tanggal_berangkat = tanggal_berangkat;
         this.nama_porter = nama_porter;
@@ -11,6 +11,7 @@ public class RiwayatBookingModel {
         this.status = status;
         this.biaya_tiket = biaya_tiket;
         this.biaya_porter = biaya_porter;
+        this.status_pembayaran = status_pembayaran;
     }
 
     public String getId_keberangkatan() {
@@ -67,5 +68,13 @@ public class RiwayatBookingModel {
 
     public void setBiaya_porter(String biaya_porter) {
         this.biaya_porter = biaya_porter;
+    }
+
+    public String getStatus_pembayaran() {
+        return status_pembayaran;
+    }
+
+    public void setStatus_pembayaran(String status_pembayaran) {
+        this.status_pembayaran = status_pembayaran;
     }
 }

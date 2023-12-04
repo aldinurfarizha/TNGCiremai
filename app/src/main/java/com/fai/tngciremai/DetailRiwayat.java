@@ -10,12 +10,9 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Display;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,22 +28,23 @@ import com.fai.tngciremai.Config.ServerUrl;
 import com.fai.tngciremai.Model.PesertaModel;
 import com.fai.tngciremai.Model.PorterModel;
 import com.fai.tngciremai.booking.CekStatusPorter;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
-import androidmads.library.qrgenearator.QRGContents;
-import androidmads.library.qrgenearator.QRGEncoder;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class DetailRiwayat extends AppCompatActivity {
 TextView tanggal_berangkat, nama_porter, biaya_tiket, biaya_porter, jumlah_pembayaran, status, kode_keberangkatan;
 ImageView qrcode;
     Bitmap bitmap;
-    QRGEncoder qrgEncoder;
     String kode_keberangkatans;
     ProgressDialog dialog;
     PesertaAdapter pesertaAdapter;
@@ -107,20 +105,14 @@ ImageView qrcode;
         });
     }
     public void generateQR(){
-        WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
-        Display display = manager.getDefaultDisplay();
-        Point point = new Point();
-        display.getSize(point);
-        int width = point.x;
-        int height = point.y;
-        int dimen = width < height ? width : height;
-        dimen = dimen * 3 / 4;
-        qrgEncoder = new QRGEncoder(kode_keberangkatans, null, QRGContents.Type.TEXT, dimen);
         try {
-            bitmap = qrgEncoder.getBitmap();
+            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+            BitMatrix bitMatrix = multiFormatWriter.encode(kode_keberangkatans, BarcodeFormat.QR_CODE, 500, 500);
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             qrcode.setImageBitmap(bitmap);
-        } catch (Error e) {
-            Log.e("Tag", e.toString());
+        } catch (WriterException e) {
+            e.printStackTrace();
         }
         getData();
     }

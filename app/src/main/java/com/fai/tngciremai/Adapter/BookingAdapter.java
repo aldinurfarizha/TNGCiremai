@@ -50,13 +50,17 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.ItemView
         final String status_name;
         switch (dataList.get(position).getStatus()){
             case "0":
-                status_name="Menunggu Jadwal";
+                if(dataList.get(position).getStatus_pembayaran().toString().equals("0")){
+                    status_name="Menunggu Pembayaran (Loket)";
+                }else{
+                    status_name="Menunggu Keberangkatan";
+                }
                 break;
             case "1":
                 status_name="Berangkat";
                 break;
             case "2":
-                status_name="Selesai";
+                status_name="Selesai Melakukan Pendakian";
                 break;
             case "3":
                 status_name="Batal";
@@ -66,11 +70,18 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.ItemView
                 status_name="";
                 break;
         }
+        final String nama_porter;
+        if(dataList.get(position).getNama_porter().equals("null")){
+            nama_porter="Tanpa Porter";
+        }else{
+            nama_porter=dataList.get(position).getNama_porter().toString();
+        }
+
         final String total_biaya=RupiahFormat.convert(Double.valueOf(dataList.get(position).getTotal_biaya()));
         final String biaya_tiket=RupiahFormat.convert(Double.valueOf(dataList.get(position).getBiaya_tiket()));
         final String biaya_porter=RupiahFormat.convert(Double.valueOf(dataList.get(position).getBiaya_porter()));
         holder.tanggal_berangkat.setText(dataList.get(position).getTanggal_berangkat());
-        holder.nama_porter.setText(dataList.get(position).getNama_porter());
+        holder.nama_porter.setText(nama_porter);
         holder.total_biaya.setText(total_biaya);
         holder.status.setText(status_name);
         holder.kode_keberangkatan.setText(dataList.get(position).getId_keberangkatan());
