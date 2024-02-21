@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,10 +32,11 @@ public class PorterPilihAdapter extends RecyclerView.Adapter<PorterPilihAdapter.
     private ArrayList<PorterPilihModel> dataList;
     Context context;
     Integer nomor=1;
+    private ArrayList<String> selectedPorters;
     public PorterPilihAdapter(ArrayList<PorterPilihModel> dataList) {
         this.context = context;
         this.dataList = dataList;
-
+        this.selectedPorters = new ArrayList<>();
     }
 
     @Override
@@ -55,39 +57,6 @@ public class PorterPilihAdapter extends RecyclerView.Adapter<PorterPilihAdapter.
     holder.tahun_pengalaman.setText("Pengalaman "+dataList.get(position).getTahun_pengalaman()+" Tahun");
     holder.frequensi.setText(dataList.get(position).getFrequensi()+" Kali Booked");
     holder.nomor.setText(""+nomor);
-    holder.pilih.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-            alertDialog.setTitle("Konfirmasi");
-            alertDialog.setMessage("Anda yakin akan memilih "+dataList.get(position).getNama_lengkap()+" sebagai porter anda ? ");
-            alertDialog.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(context.getApplicationContext(), CekStatusPorter.class);
-                    intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
-                    final String id_porter = dataList.get(position).getId_porter();
-                    final String tanggal_berangkat= dataList.get(position).getTgl_berangkat();
-                    final String jumlah_peserta=dataList.get(position).getJumlah_peserta();
-                    final String nama_porter=dataList.get(position).getNama_lengkap();
-                    intent.putExtra("id_porter",id_porter);
-                    intent.putExtra("tanggal_berangkat",tanggal_berangkat);
-                    intent.putExtra("jumlah_peserta", jumlah_peserta);
-                    intent.putExtra("nama_porter", nama_porter);
-                    context.startActivity(intent);
-                }
-            });
-            alertDialog.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
-
-            AlertDialog dialog = alertDialog.create();
-            dialog.show();
-        }
-    });
     holder.card.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -106,6 +75,13 @@ public class PorterPilihAdapter extends RecyclerView.Adapter<PorterPilihAdapter.
             context.startActivity(intent);
         }
     });
+    holder.pilih.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if (isChecked) {
+                selectedPorters.add(dataList.get(position).getId_porter());
+            } else {
+                selectedPorters.remove(dataList.get(position).getId_porter());
+            }
+        });
     nomor++;
     }
 
@@ -113,12 +89,16 @@ public class PorterPilihAdapter extends RecyclerView.Adapter<PorterPilihAdapter.
     public int getItemCount() {
         return (dataList != null) ? dataList.size() : 0;
     }
+    public ArrayList<String> getSelectedPorters() {
+        return selectedPorters;
+    }
+
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
         private TextView nama_lengkap, tahun_pengalaman, frequensi, nomor;
         private CardView card;
         private ImageView imageView;
-        private Button pilih;
+        private CheckBox pilih;
         public ItemViewHolder(View itemView) {
             super(itemView);
             card = (CardView)itemView.findViewById(R.id.card);
@@ -126,7 +106,7 @@ public class PorterPilihAdapter extends RecyclerView.Adapter<PorterPilihAdapter.
             tahun_pengalaman =(TextView) itemView.findViewById(R.id.tahun_penglaman);
             frequensi=(TextView) itemView.findViewById(R.id.frequensi);
             imageView=(ImageView) itemView.findViewById(R.id.image_view);
-            pilih=(Button) itemView.findViewById(R.id.pilih);
+            pilih=(CheckBox) itemView.findViewById(R.id.checklist_porter);
             nomor=(TextView) itemView.findViewById(R.id.nomor);
         }
     }
