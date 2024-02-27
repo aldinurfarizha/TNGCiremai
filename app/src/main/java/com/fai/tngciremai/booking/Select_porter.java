@@ -60,7 +60,71 @@ public class Select_porter extends AppCompatActivity {
         btnLanjutkan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("PORTER", getSelectedPorters().toString());
+                if(getSelectedPorters().size()==0){
+                     Toast.makeText(getApplicationContext(), "Minimal Pilih 1 Porter", Toast.LENGTH_LONG).show();
+                } else if(getSelectedPorters().size()>=5){
+                    Toast.makeText(getApplicationContext(), "Maximal 5 Porter", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    switch(jumlah_peserta) {
+                        case "2":
+                            Intent intent = new Intent(getApplicationContext(), Add2.class);
+                            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.putExtra("id_porter", getSelectedPorters().toString());
+                            intent.putExtra("tanggal_berangkat", tanggal_berangkat);
+                            intent.putExtra("jumlah_peserta", jumlah_peserta);
+                            startActivity(intent);
+                            break;
+                        case "3":
+                            Intent intent3 = new Intent(getApplicationContext(), Add3.class);
+                            intent3.setFlags(intent3.FLAG_ACTIVITY_NEW_TASK);
+                            intent3.putExtra("id_porter", getSelectedPorters().toString());
+                            intent3.putExtra("tanggal_berangkat", tanggal_berangkat);
+                            intent3.putExtra("jumlah_peserta", jumlah_peserta);
+                            startActivity(intent3);
+                            break;
+                        case "4":
+                            Intent intent4 = new Intent(getApplicationContext(), Add4.class);
+                            intent4.setFlags(intent4.FLAG_ACTIVITY_NEW_TASK);
+                            intent4.putExtra("id_porter", getSelectedPorters().toString());
+                            intent4.putExtra("tanggal_berangkat", tanggal_berangkat);
+                            intent4.putExtra("jumlah_peserta", jumlah_peserta);
+                            startActivity(intent4);
+                            break;
+                        case "5":
+                            Intent intent5 = new Intent(getApplicationContext(), Add5.class);
+                            intent5.setFlags(intent5.FLAG_ACTIVITY_NEW_TASK);
+                            intent5.putExtra("id_porter", getSelectedPorters().toString());
+                            intent5.putExtra("tanggal_berangkat", tanggal_berangkat);
+                            intent5.putExtra("jumlah_peserta", jumlah_peserta);
+                            startActivity(intent5);
+                            break;
+                        case "6":
+                            Intent intent6 = new Intent(getApplicationContext(), Add6.class);
+                            intent6.setFlags(intent6.FLAG_ACTIVITY_NEW_TASK);
+                            intent6.putExtra("id_porter", getSelectedPorters().toString());
+                            intent6.putExtra("tanggal_berangkat", tanggal_berangkat);
+                            intent6.putExtra("jumlah_peserta", jumlah_peserta);
+                            startActivity(intent6);
+                            break;
+                        case "7":
+                            Intent intent7 = new Intent(getApplicationContext(), Add7.class);
+                            intent7.setFlags(intent7.FLAG_ACTIVITY_NEW_TASK);
+                            intent7.putExtra("id_porter", getSelectedPorters().toString());
+                            intent7.putExtra("tanggal_berangkat", tanggal_berangkat);
+                            intent7.putExtra("jumlah_peserta", jumlah_peserta);
+                            startActivity(intent7);
+                            break;
+                        case "8":
+                            Intent intent8 = new Intent(getApplicationContext(), Add8.class);
+                            intent8.setFlags(intent8.FLAG_ACTIVITY_NEW_TASK);
+                            intent8.putExtra("id_porter", getSelectedPorters().toString());
+                            intent8.putExtra("tanggal_berangkat", tanggal_berangkat);
+                            intent8.putExtra("jumlah_peserta", jumlah_peserta);
+                            startActivity(intent8);
+                            break;
+                    }
+                }
             }
         });
     }

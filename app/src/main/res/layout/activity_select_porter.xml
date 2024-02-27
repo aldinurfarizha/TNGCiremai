@@ -67,6 +67,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/white"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:layout_height="50dp">
             </Button>
         </LinearLayout>
