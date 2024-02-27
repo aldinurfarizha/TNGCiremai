@@ -4,8 +4,8 @@ public class ServerUrl {
 
 
   //Root URL
-  private static final String SERVER_ADDRESS="http://192.168.1.106/";
-  private static final String SERVER_NAME="TNGCiremai_web/";
+  private static final String SERVER_ADDRESS="https://pendakianciremai.my.id/";
+  private static final String SERVER_NAME="";
   private static final String SERVER_PATH_API="api/";
   private static final String SERVER_PATH_IMAGE="private/file_upload/";
   private static final String ROOT_URL = SERVER_ADDRESS+SERVER_NAME+SERVER_PATH_API;
