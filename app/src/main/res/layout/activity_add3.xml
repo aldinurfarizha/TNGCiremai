@@ -100,7 +100,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
-                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ. "
                         android:padding="5dp"
                         android:id="@+id/nama_lengkap1"
                         android:background="@drawable/roundedborder"
@@ -248,7 +248,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
                         android:padding="5dp"
-                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ. "
                         android:id="@+id/nama_lengkap2"
                         android:background="@drawable/roundedborder"
                         android:hint="M.Rifai">
@@ -396,7 +396,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
                         android:padding="5dp"
-                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ. "
                         android:id="@+id/nama_lengkap3"
                         android:background="@drawable/roundedborder"
                         android:hint="M.Rifai">

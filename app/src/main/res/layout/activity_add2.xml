@@ -101,7 +101,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
                         android:padding="5dp"
-                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ. "
                         android:id="@+id/nama_lengkap1"
                         android:background="@drawable/roundedborder"
                         android:hint="M.Rifai">
@@ -248,7 +248,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_height="45dp"
                         android:padding="5dp"
-                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ. "
                         android:id="@+id/nama_lengkap2"
                         android:background="@drawable/roundedborder"
                         android:hint="M.Rifai">
