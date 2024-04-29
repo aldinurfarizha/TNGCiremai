@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -57,6 +58,12 @@ public class PorterPilihAdapter extends RecyclerView.Adapter<PorterPilihAdapter.
     holder.tahun_pengalaman.setText("Pengalaman "+dataList.get(position).getTahun_pengalaman()+" Tahun");
     holder.frequensi.setText(dataList.get(position).getFrequensi()+" Kali Booked");
     holder.nomor.setText(""+nomor);
+    holder.best_partner.setText("Kolaborasi Terbaik dengan:"+dataList.get(position).getBest_partner());
+    if(dataList.get(position).getBest_partner().equals("null")){
+        holder.best_partner_relative.setVisibility(View.GONE);
+    }else{
+        holder.best_partner_relative.setVisibility(View.VISIBLE);
+    }
     holder.card.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -95,10 +102,11 @@ public class PorterPilihAdapter extends RecyclerView.Adapter<PorterPilihAdapter.
 
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
-        private TextView nama_lengkap, tahun_pengalaman, frequensi, nomor;
+        private TextView nama_lengkap, tahun_pengalaman, frequensi, nomor, best_partner;
         private CardView card;
         private ImageView imageView;
         private CheckBox pilih;
+        private RelativeLayout best_partner_relative;
         public ItemViewHolder(View itemView) {
             super(itemView);
             card = (CardView)itemView.findViewById(R.id.card);
@@ -108,6 +116,8 @@ public class PorterPilihAdapter extends RecyclerView.Adapter<PorterPilihAdapter.
             imageView=(ImageView) itemView.findViewById(R.id.image_view);
             pilih=(CheckBox) itemView.findViewById(R.id.checklist_porter);
             nomor=(TextView) itemView.findViewById(R.id.nomor);
+            best_partner_relative=(RelativeLayout) itemView.findViewById(R.id.best_partner_relative);
+            best_partner=(TextView) itemView.findViewById(R.id.best_partner);
         }
     }
 }

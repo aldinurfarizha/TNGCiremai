@@ -1,9 +1,9 @@
 package com.fai.tngciremai.Model;
 
 public class PorterPilihModel {
-    String id_porter, nama_lengkap, foto, tahun_pengalaman, frequensi, tgl_berangkat, jumlah_peserta;
+    String id_porter, nama_lengkap, foto, tahun_pengalaman, frequensi, tgl_berangkat, jumlah_peserta, best_partner;
 
-    public PorterPilihModel(String id_porter, String nama_lengkap, String foto, String tahun_pengalaman, String frequensi, String tgl_berangkat, String jumlah_peserta) {
+    public PorterPilihModel(String id_porter, String nama_lengkap, String foto, String tahun_pengalaman, String frequensi, String tgl_berangkat, String jumlah_peserta, String best_partner) {
         this.id_porter = id_porter;
         this.nama_lengkap = nama_lengkap;
         this.foto = foto;
@@ -11,6 +11,15 @@ public class PorterPilihModel {
         this.frequensi = frequensi;
         this.tgl_berangkat = tgl_berangkat;
         this.jumlah_peserta = jumlah_peserta;
+        this.best_partner=best_partner;
+    }
+
+    public String getBest_partner() {
+        return best_partner;
+    }
+
+    public void setBest_partner(String best_partner) {
+        this.best_partner = best_partner;
     }
 
     public String getId_porter() {

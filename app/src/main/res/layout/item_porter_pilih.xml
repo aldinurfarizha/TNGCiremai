@@ -32,7 +32,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="1."
+                    android:text="1"
+                    android:textAlignment="center"
                     android:layout_weight="0.5"
                     android:background="@color/primary"
                     android:textColor="@color/white"
@@ -97,6 +98,35 @@
                     </Button>
                 </LinearLayout>
             </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/primary"
+                android:id="@+id/best_partner_relative"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:drawablePadding="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:id="@+id/best_partner"
+                    android:fontFamily="@font/regular"
+                    android:text="Partner Terbaik : sadum">
+                </TextView>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_best_partner"
+                    android:layout_toLeftOf="@+id/best_partner"
+                    android:layout_marginRight="5dp">
+                </ImageView>
+            </RelativeLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

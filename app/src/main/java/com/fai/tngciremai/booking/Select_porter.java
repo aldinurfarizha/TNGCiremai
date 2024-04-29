@@ -154,7 +154,7 @@ public class Select_porter extends AppCompatActivity {
                                 hasPorter.setVisibility(View.VISIBLE);
                                 for (int i=0; i<array.length(); i++){
                                     JSONObject ob=array.getJSONObject(i);
-                                    PorterPilihModel porterPilihModel=new PorterPilihModel(ob.getString("id_porter"),ob.getString("nama_porter"), ob.getString("foto"), ob.getString("tahun_pengalaman"), ob.getString("frequensi_porter"), tanggal_berangkat, jumlah_peserta);
+                                    PorterPilihModel porterPilihModel=new PorterPilihModel(ob.getString("id_porter"),ob.getString("nama_porter"), ob.getString("foto"), ob.getString("tahun_pengalaman"), ob.getString("frequensi_porter"), tanggal_berangkat, jumlah_peserta, ob.getString("best_partner"));
                                     porterPilihModels.add(porterPilihModel);
                                 }
                                 porterPilihAdapter = new PorterPilihAdapter(porterPilihModels);
